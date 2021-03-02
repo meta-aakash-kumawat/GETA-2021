@@ -2,10 +2,10 @@ package intSet;
 
 import java.util.Arrays;
 
-public class intSet 
+public  final class intSet 
 {	
 	
-	private int set[];
+	private final int set[];
 	
 	/**
 	 * Constructor to assign values to variable set 
@@ -62,31 +62,23 @@ public class intSet
 	{
 		if( subSet.length == 0)
 				return true;
-		else
+		
+		int tempSet[] = this.getSet();
+		int count = 0;
+		for(int i = 0; i < subSet.length; i++)
 		{
-			int tempSet[] = this.getSet();
-			int count = 0;
-			for(int i = 0; i < subSet.length; i++)
-			{
-				for(int j = 0; j < tempSet.length; j++)
-				{
-					if( subSet[i] == tempSet[j])
-					{
-						count++;
-						tempSet[j] = -1;
-					}
-				}
-			}
-			if( count == subSet.length)
-				return true;
-			else
-				return false;
+			if(isMember(tempSet[i])
+			   count++;
 		}
+		if( count == subSet.length)
+			return true;
+		return false;
+
 	}
 	
 	/**
 	 * to find the compliment of the given set
-	 * @param set
+	 * @param set 
 	 * @return int [] complimentSet return compliment set
 	 */
 	public int[] setCompliment(int set[])
