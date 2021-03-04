@@ -9,7 +9,9 @@ public class LCMandHCF
 	 * @return will retrun the evaluated lcm 
 	 */
 	public int lcm(int firstNumber , int secondNumber)
-	{
+	{	
+		if(firstNumber <= 0 || secondNumber <=0)
+			throw new AssertionError("Numbers can't be negative or zero");
 		return( firstNumber / gcd(firstNumber, secondNumber)) * secondNumber;
 	}
 	
@@ -37,6 +39,8 @@ public class LCMandHCF
 	 */
 	public int hcf(int firstNumber, int secondNumber)
 	{
+		if(firstNumber <= 0 || secondNumber <=0)
+			throw new AssertionError("Numbers can't be negative or zero");
 		return gcd(firstNumber ,secondNumber);
 	}
 }
