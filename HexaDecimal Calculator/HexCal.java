@@ -1,5 +1,5 @@
 
-class HexCal {
+public class HexCal {
 	
 	/**
 	 * To Convert Decimal number to hexadecimal number
@@ -18,7 +18,6 @@ class HexCal {
     		decimalNumber = decimalNumber/16;
     	}
     	return hexaDecimalNumber;
-    	 
     }
     
     /**
@@ -39,7 +38,6 @@ class HexCal {
         	decimalNumber = 16*decimalNumber + d;
         }
         return decimalNumber;
-        
     }
     
     /**
@@ -48,7 +46,8 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return true or false
      */
-    public boolean CompareEqual(String hexadecimalNumberA, String hexadecimalNumberB) {
+    public boolean CompareEqual(String hexadecimalNumberA, String hexadecimalNumberB) 
+    {
         hexadecimalNumberA.toLowerCase();
         hexadecimalNumberB.toLowerCase();
         if (hexadecimalNumberA.equals(hexadecimalNumberB)) {
@@ -64,7 +63,8 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return true or false
      */
-    public boolean CompareGreaterThan(String hexadecimalNumberA, String hexadecimalNumberB) {
+    public boolean CompareGreaterThan(String hexadecimalNumberA, String hexadecimalNumberB) 
+    {
         hexadecimalNumberA.toLowerCase();
         hexadecimalNumberB.toLowerCase();
         if (hexadecimalNumberA.length() > hexadecimalNumberB.length()) {
@@ -83,7 +83,8 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return true or false
      */
-    public boolean CompareLessThan(String hexadecimalNumberA, String hexadecimalNumberB) {
+    public boolean CompareLessThan(String hexadecimalNumberA, String hexadecimalNumberB) 
+    {
         hexadecimalNumberA.toLowerCase();
         hexadecimalNumberB.toLowerCase();
         if (hexadecimalNumberA.length() > hexadecimalNumberB.length()) {
@@ -102,13 +103,13 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return Will return sum of two numbers
      */
-    public String addHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) {
+    public String addHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB)
+    {
 
         int decimalNumberA = hexadecimalToDecimal(hexadecimalNumberA);
         int decimalNumberB = hexadecimalToDecimal(hexadecimalNumberB);
 
         return decimalToHexadecimal(decimalNumberA + decimalNumberB);
-
     }
 
     /**
@@ -117,7 +118,8 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return Will return substraction of two numbers
      */
-    public String substractHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) {
+    public String substractHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) 
+    {
 
         int decimalNumberA = hexadecimalToDecimal(hexadecimalNumberA);
         int decimalNumberB = hexadecimalToDecimal(hexadecimalNumberB);
@@ -134,13 +136,12 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return Will return multiply of two numbers
      */
-    public String multiplyHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) {
-
+    public String multiplyHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) 
+    {
         int decimalNumberA = hexadecimalToDecimal(hexadecimalNumberA);
         int decimalNumberB = hexadecimalToDecimal(hexadecimalNumberB);
 
         return decimalToHexadecimal(decimalNumberA * decimalNumberB);
-
     }
 
     /**
@@ -149,8 +150,8 @@ class HexCal {
      * @param hexadecimalNumberB given hexadecimal number 2
      * @return Will return division of two numbers
      */
-    public String divideHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) {
-
+    public String divideHexadecimalNumbers(String hexadecimalNumberA, String hexadecimalNumberB) 
+    {
         int decimalNumberA = hexadecimalToDecimal(hexadecimalNumberA);
         int decimalNumberB = hexadecimalToDecimal(hexadecimalNumberB);
 
@@ -159,7 +160,6 @@ class HexCal {
         } else {
 
             return ("Try Another Pare Of Hexadecimal Numbers, First Number is smaller than Second Or Result Is Not Integer Number");
-
         }
     }
 }
