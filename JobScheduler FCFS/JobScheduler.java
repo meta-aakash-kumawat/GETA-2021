@@ -1,7 +1,7 @@
 
 public class JobScheduler 
 {
-	public int[] completionTime(int processes[][])
+	public int[] getCompletionTime(int processes[][])
 	{
 		int numberOfProcess = processes.length;
 		int arrivalTimeIndex = 0;
@@ -30,12 +30,12 @@ public class JobScheduler
 		return completionTimeProcesses;
 	}
 	
-	public int[] turnAroundTime(int processes[][])
+	public int[] getTurnAroundTime(int processes[][])
 	{
 		int numberOfProcess = processes.length;
 		int burstTimeIndex = 1;
 		int arrivalTimeIndex = 0;
-		int timeToComplete[] = completionTime(processes);
+		int timeToComplete[] = getCompletionTime(processes);
 		int timeToCompleteAfterArrival[] = new int[numberOfProcess];
 		for(int i = 0; i < numberOfProcess; i++)
 		{
@@ -43,11 +43,11 @@ public class JobScheduler
 		}
 		return timeToCompleteAfterArrival;
 	}
-	public int[] waitingTime(int processes[][])
+	public int[] getWaitingTime(int processes[][])
 	{
 		int numberOfProcess = processes.length;
 		int burstTimeIndex = 1;
-		int turnAround[] = turnAroundTime(processes);
+		int turnAround[] = getTurnAroundTime(processes);
 		int timeProcessToWait[] = new int[numberOfProcess];
 		for(int i = 0; i < numberOfProcess; i++)
 		{
@@ -55,10 +55,10 @@ public class JobScheduler
 		}
 		return timeProcessToWait;
 	}
-	public int avgWaitingTime(int processes[][])
+	public int getAvgWaitingTime(int processes[][])
 	{
 		int numberOfProcess = processes.length;
-		int timeToWait[] = waitingTime(processes);
+		int timeToWait[] = getWaitingTime(processes);
 		int totalWaitingTime = 0;
 		for(int i = 0; i < numberOfProcess; i++)
 		{
@@ -69,7 +69,7 @@ public class JobScheduler
 	public int maximumWitingTime(int processes[][])
 	{
 		int numberOfProcess = processes.length;
-		int timeToWait[] = waitingTime(processes);
+		int timeToWait[] = getWaitingTime(processes);
 		int maxTime = 0;
 		for(int i = 0; i < numberOfProcess ;i++)
 		{
