@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 
-class HexCalMain {
-	public static void main(String args[])
-	{
-    HexCal calculate = new HexCal();
-
-    menu(calculate);
-    
-	}
-    private static int getUserInput() {
+class HexCalMain 
+{
+   public static void main(String args[])
+   {
+	HexCal calculate = new HexCal();
+	menu(calculate);
+    }
+    private static int getUserInput() 
+    {
         Scanner in = new Scanner(System.in);
         System.out.println( "1.Convert Hexadecimal To Decimal\n"+ 
                 "2.Convert Decimal To Hexadecimal\n"+
@@ -26,7 +26,8 @@ class HexCalMain {
         return value;
     }
 
-    public static void menu(HexCal calculate) {
+    public static void menu(HexCal calculate) 
+    {
     	while (true)
     	{
             int choice = getUserInput();
@@ -118,7 +119,8 @@ class HexCalMain {
         System.out.println("The Division Of Two Hexadecimal Number is " + calculate.divideHexadecimalNumbers(firstHexNumber, secondHexNumber));
     }
 
-    private static void compareTwoHex(HexCal calculate) {
+    private static void compareTwoHex(HexCal calculate) 
+    {
         int value ;
         Scanner in = new Scanner(System.in);
     	System.out.println("Enter First HexaDecimal Number ");
@@ -126,9 +128,9 @@ class HexCalMain {
     	System.out.println("Enter Second HexaDecimal Number ");
         String secondHexNumber = in.nextLine();
         
-        System.out.println( "1.Two Hexadecimal Numbers Are Equal?/n"+
-                "2.First Hexadecimal Number Is Greatr Than Second/n"+
-                "3.First Hexadecimal Number Is Less Than Second?/n"+  
+        System.out.println( "1.Two Hexadecimal Numbers Are Equal?\n"+
+                "2.First Hexadecimal Number Is Greatr Than Second\n"+
+                "3.First Hexadecimal Number Is Less Than Second?\n"+  
         		"Enter Your Choice ");
         value = in.nextInt();
         switch (value) {
