@@ -16,26 +16,23 @@ public class ArrOperation
 	       {
 	            throw new AssertionError("Array is empty.");
 	       }
-	       else 
+	       for (int i=0; i < array.length; i++)
 	       {
-	            for (int i=0; i < array.length; i++)
+	            int counter = 0;
+	            for (int j = array.length-1; j >= 0 && i+counter < array.length;j--)
 	            {
-	                int counter = 0;
-	                for (int j = array.length-1; j >= 0 && i+counter < array.length;j--)
+	                if (array[i+counter] == array[j]) 
+	                    counter++;
+	                else 
 	                {
-	                    if (array[i+counter] == array[j]) 
-	                        counter++;
-	                    else 
-	                    {
-	                        maximumMirror = Math.max(maximumMirror, counter);
-	                        counter = 0;
-	                    }
+	                    maximumMirror = Math.max(maximumMirror, counter);
+	                    counter = 0;
 	                }
-	                maximumMirror = Math.max(maximumMirror, counter);
 	            }
-	        }
-	       
-	        return maximumMirror;
+	            maximumMirror = Math.max(maximumMirror, counter);
+	       }
+	        	       
+	       return maximumMirror;
 	 }
 	 
 	 /**
@@ -138,38 +135,23 @@ public class ArrOperation
 	       {
 	            throw new AssertionError("Array is empty.");
 	       }
-				
-		int index = array.length/2;
-		int sumLeft = 0;
-		int sumRight = 0;
-		for(int i = 0; i < index ;i++)
-			sumLeft += array[i];
-		for(int j = index; j < array.length; j++)
-			sumRight += array[j];
-		
-		if(sumLeft == sumRight)
-			return index;
-		if(sumLeft > sumRight)
+		int totalSum = 0;
+		for(int i = 0; i < array.length; i++)
 		{
-			for(int i = index-1; i > 0; i--)
-			{
-				sumLeft -= array[i];
-				sumRight += array[i];
-				if(sumLeft  == sumRight )
-					return i;
-			}
+			totalSum += array[i];
 		}
-		else
+		int index = -1;
+		int leftSum = 0;
+		int rightSum = totalSum;
+		for(int i = 0; i < array.length; i++)
 		{
-			for(int i = index; i < array.length; i++)
-			{
-				sumLeft += array[i];
-				sumRight -= array[i];
-				if(sumLeft  == sumRight )
-					return i+1;
-			}
+			
+			rightSum -= array[i];
+			leftSum += array[i];
+			if(leftSum == rightSum)
+				return i+1;
 		}
-		return -1;
+		return index;
 	}
 	
 	
