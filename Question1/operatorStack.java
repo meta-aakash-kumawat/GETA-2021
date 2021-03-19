@@ -28,7 +28,7 @@ public class operatorStack
 		top--;
 		return element;
 	}
-	public int peek()
+	public char peek()
 	{
 		return operatorStackArray[top];
 	}
