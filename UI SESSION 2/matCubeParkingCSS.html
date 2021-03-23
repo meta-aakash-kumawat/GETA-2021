@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<link href="designSheet.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Metacube Parking</h1>
+		<nav class="navbar">
+			<a href = "#add"/>Add Employe</a> |
+			<a href = "#vechile"/>Add Vechile</a> |
+			<a href = "#feedback"/>Give Feedback</a> |
+			<a href = "#pricing"/>Price List</a>
+		</nav>
+		<img id="image" src="caar.png" width='100%' height='100%'>
+		<br><br>
+		<!-- ADD EMPLOYEE DETAILS -->
+		<div id="add">
+			<button type="button" class="collapsible">Employee Details</button>
+			<div class="content">
+			<form >
+				<span>Employee name </span><br>
+				<input type = "text"/><br><br>
+				<span>Employee gender  </span><br>
+				<input type = "text"/><br><br>
+				<span>Employee mobile number  </span><br>
+				<input type = "text"/><br><br>
+				<span>Employee Email Id  </span><br>
+				<input type = "email"/><br><br>
+				<span>Password  </span><br>
+				<input type = "password"/><br><br>
+				<span>Confirm password  </span><br>
+				<input type = "password"/><br><br>
+				<input type="submit" value="submit">
+			</form>
+			</div>
+		</div>
+		<br>
+		<!-- ADD VECHILE DETAILS -->
+		<div id="vechile">
+			<button type="button" class="collapsible">Vechile Details</button>
+			<div class="content">
+			<form >
+				<span>Vechile Company </span><br>
+				<input type = "text"/><br><br>
+				<span>Vechile Model  </span><br>
+				<input type = "text"/><br><br>
+				<span>Vechile Type  </span><br>
+				<input type = "text"/><br><br>
+				<span>Vechile Number </span><br>
+				<input type = "text"/><br><br>
+				<span>Employee Id  </span><br>
+				<input type = "t"/><br><br>
+				<span>Vechile identification details  </span><br>
+				<textarea> Enter text here...</textarea><br><br>
+				<input type="submit" value="submit">
+			</form>
+			</div>
+		</div>
+		<br>
+		<!-- FEEDBACK  -->
+		<div id="feedback">
+			<button type="button" class="collapsible">Feedback</button>
+			<div class="content">
+			<form>
+				<span>Name </span><br>
+				<input type = "text"/><br><br>
+				<span>Email  </span><br>
+				<input type = "text"/><br><br>
+				<span>Mobile No.  </span><br>
+				<input type = "text"/><br><br>
+				<span>Subject  </span><br>
+				<input type = "text"/><br><br>
+				<span>Message  </span><br>
+				<textarea> Enter text here...</textarea><br><br>
+				<input type = "button" value = SUBMIT /><br><br>
+			</form>
+			</div>
+		</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i; 
+
+for(i = 0; i < coll.length; i++)
+{
+	coll[i].addEventListener("click",function(){
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if(content.style.display === "block") 
+		{
+			content.style.display = "none";
+		}
+		else
+		{
+			content.style.display = "block";
+		}
+	});
+}
+</script>
+
+		<br>
+		<!-- PRICE DETAILS -->
+		<div id="pricing">
+		<table border = 2>
+		<h2 style="color:green;">Price list</h2>
+		<tr><th> $ </th><th>CYCLE</th><th>BIKE</th><th>CAR</th>
+		<tr><th> DAILY</th><th>5</th><th>10</th><th>20</th>
+		<tr><th> MONTHLY </th><th>100</th><th>200</th><th>500</th>
+		<tr><th> YEARLY </th><th>500</th><th>1000</th><th>3500</th>
+		</table><br>
+	</body>
+</html>
+
+		
